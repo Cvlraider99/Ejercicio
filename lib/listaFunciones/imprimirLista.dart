@@ -3,6 +3,7 @@
 import 'package:ejercicio/listaFunciones/agregar/pantallaAgregar.dart';
 import 'package:ejercicio/listaFunciones/agregarEliminado.dart';
 import 'package:ejercicio/listaFunciones/menuLateral.dart';
+import 'package:ejercicio/listaFunciones/modificar/pantallaModificar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -69,7 +70,10 @@ class ImprimirListaElementos extends State<ImprimirLista> {
                                       ),
                                       height: 40.0,
                                       onPressed: () {
-                                        //mensajeAccion ("Aceptar", i ,context);
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(builder: (context) => PantallaModificar(widget.listaApi[i]["name"])),
+                                        );
                                       },
                                       color: Colors.blueAccent,
                                       child: Text('Modificar',
