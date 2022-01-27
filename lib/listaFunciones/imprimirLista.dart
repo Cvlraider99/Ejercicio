@@ -38,7 +38,6 @@ class ImprimirListaElementos extends State<ImprimirLista> {
           ),
         ],
       ),
-      //extendBodyBehindAppBar: Platform.isIOS == true ? true : false,
       body: Container(
         child: Column(
           children: <Widget>[
