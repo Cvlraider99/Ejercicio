@@ -14,6 +14,14 @@ class SacarLista extends StatelessWidget {
     var listaDetalles = []; //Lista Final
     var listaEliminados = [];//Lista de eliminados
 
+    //Se sacan los nombres que estan alojados en la Base de datos
+    await FirebaseFirestore.instance.collection("agregados").get().then((QuerySnapshot doc) => {
+      doc.docs.forEach((doc) {
+        listaDetalles.add(doc);
+      })
+    });
+
+    //Se sacan los nombres que estan alojados en la Api
     final respuestaApi = await http.get (Uri.parse("https://pokeapi.co/api/v2/pokemon/"));
     var infoApi = json.decode(respuestaApi.body);
     for (int i = 0; i<infoApi["results"].length; i++){

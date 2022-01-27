@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 void agregarPokemon (String nombre, context) async{
 
   await FirebaseFirestore.instance.collection("agregados").add({
-    'Nombre': nombre,
+    'name': nombre,
   })
       .then((value) => Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) =>
       SacarLista()),
