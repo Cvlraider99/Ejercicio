@@ -1,4 +1,5 @@
 //En este archivo estara el codigo para  modificar un elemento
+import 'package:ejercicio/listaFunciones/historial/buscarHistorial.dart';
 import 'package:ejercicio/listaFunciones/modificar/funcionModificar.dart';
 import 'package:flutter/material.dart';
 
@@ -53,6 +54,17 @@ class PantallaModificarElementos extends State<PantallaModificar>
               ),
               title: Text("Modificar Pokemon"),
               backgroundColor: Colors.red,
+              actions: <Widget>[
+                IconButton(
+                  icon: new Icon(Icons.query_builder_sharp, size: 35.0, color: Colors.white,),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => BuscarHistorial(widget.nombre,context,widget.listaApi)),
+                    );
+                  }, //Boton para ver el historial
+                ),
+              ],
             ),
             resizeToAvoidBottomInset: true,
             body: Container( //En este container se encapsulara el campo para el nombre del Pokemon
