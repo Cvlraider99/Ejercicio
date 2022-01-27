@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "985708221676",
+    "project_id": "s2credit-fcc84",
+    "storage_bucket": "s2credit-fcc84.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:985708221676:android:66b887590df6374422c1c9",
+        "android_client_info": {
+          "package_name": "com.example.ejercicio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "985708221676-cf7mvnb0e2642scoacvctnfi3g9emt0p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjZOg9EzXA6fLnDyswFjhBNzXuGLsPqcQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "985708221676-cf7mvnb0e2642scoacvctnfi3g9emt0p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
