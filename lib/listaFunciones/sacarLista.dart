@@ -27,19 +27,6 @@ class SacarLista extends StatelessWidget {
       listaDetalles.add(infoApi["results"][i]);
     }
 
-    //Ahora se compara la lista original con la lista de Eliminados y elimina las coincidencias
-    await FirebaseFirestore.instance.collection("eliminados").get().then((QuerySnapshot doc) => {
-      doc.docs.forEach((doc) {
-        for (int a=0; a<listaDetalles.length; a++)
-        {
-          if (doc["Name"] == listaDetalles[a]["name"])
-          {
-            listaDetalles.removeAt(a); //Se elimina el elemento si se encuentra una coincidencia
-          }
-        }
-      })
-    });
-
     //De la lista que queda ahora se veran los elementos que se hayan modificado y se cambian
     await FirebaseFirestore.instance.collection("modificados").get().then((QuerySnapshot doc) => {
       doc.docs.forEach((doc) {
@@ -53,6 +40,20 @@ class SacarLista extends StatelessWidget {
         }
       })
     });
+
+    //Ahora se compara la lista original con la lista de Eliminados y elimina las coincidencias
+    await FirebaseFirestore.instance.collection("eliminados").get().then((QuerySnapshot doc) => {
+      doc.docs.forEach((doc) {
+        for (int a=0; a<listaDetalles.length; a++)
+        {
+          if (doc["Name"] == listaDetalles[a]["name"])
+          {
+            listaDetalles.removeAt(a); //Se elimina el elemento si se encuentra una coincidencia
+          }
+        }
+      })
+    });
+
     return listaDetalles;
   }
 
