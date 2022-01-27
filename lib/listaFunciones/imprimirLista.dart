@@ -1,4 +1,4 @@
-//En este archivo esta el codigo para mostrar la info de la Api
+//En este archivo esta el codigo para mostrar la informacion que se saque de la Api
 
 import 'package:ejercicio/listaFunciones/agregar/pantallaAgregar.dart';
 import 'package:ejercicio/listaFunciones/agregarEliminado.dart';
