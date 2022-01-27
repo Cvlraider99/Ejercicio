@@ -32,7 +32,7 @@ class ImprimirListaElementos extends State<ImprimirLista> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => PantallaAgregar()),
+                MaterialPageRoute(builder: (context) => PantallaAgregar(listaApi: widget.listaApi)),
               );
             }, //Boton para agregar nuevo registro
           ),

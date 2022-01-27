@@ -6,6 +6,10 @@ import 'package:flutter/material.dart';
 
 class PantallaAgregar extends StatefulWidget {
 
+  final List listaApi;
+
+  PantallaAgregar({this.listaApi});
+
   @override
   PantallaAgregarElementos createState () => PantallaAgregarElementos();
 
@@ -84,7 +88,7 @@ class PantallaAgregarElementos extends State<PantallaAgregar>
                           height: alturaDispositivo/20, //la Altura del boton
                           onPressed:(){
                             if (valorNombre != null || valorNombre.isNotEmpty) {
-                              agregarPokemon(valorNombre, context);
+                              agregarPokemon(valorNombre, context,widget.listaApi);
                             }
                           },
                           color: valorNombre == null || valorNombre.isEmpty
