@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 Future<void> dialogoVerificando(context) async { //Mensaje emergente que se muestra cuando se estan verificando sus datos
   return showDialog<void>(
     context: context,
-    barrierDismissible: false, // user must tap button!
+    barrierDismissible: false,
     builder: (BuildContext context) {
       if(Platform.isIOS){
         return CupertinoAlertDialog(

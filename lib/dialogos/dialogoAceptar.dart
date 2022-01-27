@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 Future<void> dialogoAceptar (String titulo, String texto, context) async {
   return showDialog<void>(
     context: context,
-    barrierDismissible: false, // user must tap button!
+    barrierDismissible: false,
     builder: (BuildContext context) {
       if (Platform.isIOS)
       {
