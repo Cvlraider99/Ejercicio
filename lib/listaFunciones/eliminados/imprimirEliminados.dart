@@ -1,5 +1,6 @@
 //En este archivo esta el codigo necesario para imprimir los elementos Eliminados que se encuentren
 import 'dart:io';
+import 'package:ejercicio/listaFunciones/menuLateral.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -19,6 +20,7 @@ class ImprimirEliminadosElementos extends State<ImprimirEliminados> {
     return new Scaffold(
       appBar: AppBar(title: Text("Eliminados"), backgroundColor: Colors.red,),
       extendBodyBehindAppBar: Platform.isIOS == true ? true : false,
+      drawer: MenuLateral(),
       body: Container(
         child: Column(
           children: <Widget>[
