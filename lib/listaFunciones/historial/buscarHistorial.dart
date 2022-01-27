@@ -14,7 +14,7 @@ class BuscarHistorial extends StatelessWidget {
 
   BuscarHistorial (this.nombre, this.context,this.listaApi);
 
-  //Funcion que buscara los nombres eliminados y los mostrara en pantalla
+  //Funcion que buscara los cambios que se han tenido si es que hay
   Future <List> infoEliminados() async{
     var historial = [];
     var idDocumento;
