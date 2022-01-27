@@ -21,7 +21,6 @@ void crearHistorial (var idDocumento, String nombreAnterior, context){
         'timestamp': Timestamp.now().microsecondsSinceEpoch,
         'fecha' : fecha,
         'hora' : hora
-        //no se agragara nada solo se creara el documento
       }).then((_){
         Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) =>
         SacarLista()),
