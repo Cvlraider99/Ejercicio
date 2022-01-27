@@ -1,6 +1,4 @@
 //En este archivo estara el codigo para  modificar un elemento
-
-import 'package:ejercicio/listaFunciones/agregar/agregarPokemon.dart';
 import 'package:flutter/material.dart';
 
 
@@ -25,12 +23,12 @@ class PantallaModificarElementos extends State<PantallaModificar>
   @override
   void initState() {
     super.initState();
-    asignarValorInicial(); //Primero se le pone el valor al
+    asignarValorInicial(); //Primero se le pone el valor al TextEditing
   }
 
   asignarValorInicial(){
     controladorNombre..text = widget.nombre; //Se le pone el valor inicial al textBox
-    valorNombre = widget.nombre; // Se le pone el valor de la cantidad
+    valorNombre = widget.nombre; // Se le pone el nombre en mi variable
   }
 
   @override
@@ -89,7 +87,7 @@ class PantallaModificarElementos extends State<PantallaModificar>
                             ),
                           ),
                         ),
-                        //Boton para dar de alta al Pokemon
+                        //Boton para dar modificar el nombre del Pokemon
                         MaterialButton(
                           shape: new RoundedRectangleBorder(
                               borderRadius: new BorderRadius.circular(7.0)
@@ -98,7 +96,7 @@ class PantallaModificarElementos extends State<PantallaModificar>
                           height: alturaDispositivo/20, //la Altura del boton
                           onPressed:(){
                             if (valorNombre != null || valorNombre.isNotEmpty) {
-                              agregarPokemon(valorNombre, context);
+                              //agregarPokemon(valorNombre, context);
                             }
                           },
                           color: valorNombre == null || valorNombre.isEmpty
@@ -119,5 +117,4 @@ class PantallaModificarElementos extends State<PantallaModificar>
         )
     );
   }
-
 }

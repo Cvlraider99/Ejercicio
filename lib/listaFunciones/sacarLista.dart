@@ -12,7 +12,6 @@ class SacarLista extends StatelessWidget {
   //Esta funcion me conectara a la Api y sacara toda la informacion
   Future <List> infoApi() async{
     var listaDetalles = []; //Lista Final
-    var listaEliminados = [];//Lista de eliminados
 
     //Se sacan los nombres que estan alojados en la Base de datos
     await FirebaseFirestore.instance.collection("agregados").get().then((QuerySnapshot doc) => {
@@ -31,20 +30,29 @@ class SacarLista extends StatelessWidget {
     //Ahora se compara la lista original con la lista de Eliminados y elimina las coincidencias
     await FirebaseFirestore.instance.collection("eliminados").get().then((QuerySnapshot doc) => {
       doc.docs.forEach((doc) {
-        listaEliminados.add(doc["Name"]);
+        for (int a=0; a<listaDetalles.length; a++)
+        {
+          if (doc["Name"] == listaDetalles[a]["name"])
+          {
+            listaDetalles.removeAt(a); //Se elimina el elemento si se encuentra una coincidencia
+          }
+        }
       })
     });
 
-    for (int i=0; i<listaEliminados.length; i++)
-    {
-      for (int a=0; a<listaDetalles.length; a++)
-      {
-        if (listaEliminados[i] == listaDetalles[a]["name"])
+    //De la lista que queda ahora se veran los elementos que se hayan modificado y se cambian
+    await FirebaseFirestore.instance.collection("modificados").get().then((QuerySnapshot doc) => {
+      doc.docs.forEach((doc) {
+        for (int a=0; a<listaDetalles.length; a++)
         {
-          listaDetalles.removeAt(a);
+          if (doc["Original"] == listaDetalles[a]["name"])
+          {
+            listaDetalles.removeAt(a);
+            listaDetalles.add(doc);
+          }
         }
-      }
-    }
+      })
+    });
     return listaDetalles;
   }
 
