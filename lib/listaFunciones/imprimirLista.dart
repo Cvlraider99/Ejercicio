@@ -72,7 +72,7 @@ class ImprimirListaElementos extends State<ImprimirLista> {
                                       onPressed: () {
                                         Navigator.push(
                                           context,
-                                          MaterialPageRoute(builder: (context) => PantallaModificar(widget.listaApi[i]["name"])),
+                                          MaterialPageRoute(builder: (context) => PantallaModificar(widget.listaApi[i]["name"],listaApi: widget.listaApi)),
                                         );
                                       },
                                       color: Colors.blueAccent,

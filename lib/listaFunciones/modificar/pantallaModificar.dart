@@ -1,11 +1,14 @@
 //En este archivo estara el codigo para  modificar un elemento
+import 'package:ejercicio/listaFunciones/modificar/funcionModificar.dart';
 import 'package:flutter/material.dart';
 
 
 class PantallaModificar extends StatefulWidget {
 
   final String nombre;
-  PantallaModificar(this.nombre);
+  final List listaApi;
+
+  PantallaModificar(this.nombre, {this.listaApi});
 
   @override
   PantallaModificarElementos createState () => PantallaModificarElementos();
@@ -96,7 +99,7 @@ class PantallaModificarElementos extends State<PantallaModificar>
                           height: alturaDispositivo/20, //la Altura del boton
                           onPressed:(){
                             if (valorNombre != null || valorNombre.isNotEmpty) {
-                              //agregarPokemon(valorNombre, context);
+                              funcionModificar(widget.nombre, valorNombre,widget.listaApi,context);
                             }
                           },
                           color: valorNombre == null || valorNombre.isEmpty
