@@ -1,12 +1,11 @@
 //En este archivo esta el codigo para mostrar la info de la Api
 
+import 'package:ejercicio/listaFunciones/agregar/pantallaAgregar.dart';
 import 'package:ejercicio/listaFunciones/agregarEliminado.dart';
 import 'package:ejercicio/listaFunciones/menuLateral.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-
-const verdePima = Color(0xffA0D041);
 
 class ImprimirLista extends StatefulWidget{
   final List listaApi;
@@ -23,7 +22,21 @@ class ImprimirListaElementos extends State<ImprimirLista> {
     //aqui los elementos necesarios
     return new Scaffold(
       drawer: MenuLateral(),
-      appBar: AppBar(title: Text("Pokedex"), backgroundColor: Colors.red,),
+      appBar: AppBar(
+        title: Text("Pokedex"),
+        backgroundColor: Colors.red,
+        actions: <Widget>[
+          IconButton(
+            icon: new Icon(Icons.add, size: 35.0, color: Colors.white,),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PantallaAgregar()),
+              );
+            }, //Boton para agregar nuevo registro
+          ),
+        ],
+      ),
       //extendBodyBehindAppBar: Platform.isIOS == true ? true : false,
       body: Container(
         child: Column(

@@ -62,7 +62,7 @@ class LoginElementos extends State<MyApp>
                       children: <Widget>[
                         //Campo para introducir el usuario
                         Padding(
-                          padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
+                          padding: EdgeInsets.fromLTRB(0, 30, 0, 10),
                           child: Container (
                             width: MediaQuery.of(context).size.width/1.2,
                             padding: EdgeInsets.only(
